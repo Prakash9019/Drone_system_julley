@@ -1,12 +1,57 @@
 # 🛸 Drone Intelligence System for India
 
-An advanced AI-driven platform for analyzing drone regulations, calculating business ROI, and simulating flight telemetry within the Indian ecosystem. This project was developed as part of the JulleyOnline AI/ML Internship.
+An end-to-end AI-powered Drone Intelligence Platform designed for the Indian ecosystem, integrating Retrieval-Augmented Generation (RAG), tool-based computation (MCP), and real-time analytics. This system serves as a centralized knowledge hub for drone regulations, business insights, and operational planning.
+
+Developed as part of the JulleyOnline AI/ML Internship, the project demonstrates production-level AI architecture combining LLMs, vector databases, and deterministic services.
+
+---
 
 ## 🌟 Key Features
-* **Agentic RAG System**: Query Drone Rules 2021 and industry datasets using OpenAI-powered semantic search.
-* **MCP Calculation Tools**: Deterministic calculators for flight endurance and ROI analysis.
-* **Synthetic Data Engine**: Generates 1,000+ flight logs for compliance and analytics testing.
-* **Interactive Dashboard**: A Streamlit interface featuring a real-time chatbot and data visualizations.
+
+### 🤖 Agentic RAG System
+- Implements a Retrieval-Augmented Generation pipeline using OpenAI embeddings and ChromaDB
+- Enables semantic search over Drone Rules 2021, regulations, and industry datasets
+- Supports multi-modal ingestion (PDF, CSV, text, images)
+- Provides grounded responses with source citations
+
+---
+
+### 🧩 MCP Tooling Layer (Deterministic Intelligence)
+- Flight Time Calculator (battery, payload, environmental conditions)
+- ROI Calculator (investment, revenue, break-even analysis)
+- Regulation Compliance Checker (DGCA rules, no-fly zones)
+- Drone Recommendation Engine (budget, use-case based filtering)
+
+---
+
+### 📊 Synthetic Data Engine
+- Generates 1,000+ simulated drone flight logs
+- Enables analytics, testing, and model validation
+- Supports scenario-based business simulations
+
+---
+
+### 📡 FastAPI Backend
+- Modular API architecture with route separation
+- Intelligent routing between RAG and MCP tools
+- File upload and dynamic knowledge base updates
+- Scalable and deployable service layer
+
+---
+
+### 🖥️ Interactive Dashboard
+- Streamlit-based UI with real-time chatbot
+- Tool-driven analytics and visualizations
+- Document upload and query interface
+- Displays responses with source attribution
+
+---
+
+## 🧠 System Highlights
+- Combines **probabilistic AI (LLM)** with **deterministic computation (MCP)**
+- Implements **semantic retrieval + re-ranking (MMR)**
+- Supports **multi-modal RAG ingestion**
+- Designed with **modular, scalable architecture**
 
 ---
 
