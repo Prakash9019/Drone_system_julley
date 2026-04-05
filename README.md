@@ -99,7 +99,7 @@ Run the backend and frontend in separate terminals:
 
 **Backend:** `uvicorn api.main:app --reload`
 
-**Frontend:** `streamlit run frontend/src/app.py`
+**Frontend:** `streamlit run frontend/app.py`
 
 ## 🛠️ Tech Stack
 * **Language**: Python 3.12
