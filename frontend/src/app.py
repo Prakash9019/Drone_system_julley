@@ -31,6 +31,58 @@ with tab1:
                             st.error(f"Error: {response.text}")
                     except Exception as e:
                         st.error(f"Failed to connect: {e}")
+    # --- CHATBOT UI STARTS HERE ---
+
+# Initialize chat history
+if "messages" not in st.session_state:
+    st.session_state.messages = []
+
+# Display previous messages
+for message in st.session_state.messages:
+    with st.chat_message(message["role"]):
+        st.markdown(message["content"])
+
+# Chat input box (THIS WAS MISSING)
+user_msg = st.chat_input("Ask about Drone Rules, ROI, etc...")
+
+if user_msg:
+    # Show user message
+    with st.chat_message("user"):
+        st.markdown(user_msg)
+
+    st.session_state.messages.append({
+        "role": "user",
+        "content": user_msg
+    })
+
+    try:
+        response = requests.post(
+            f"{BACKEND_URL}/chat",
+            json={"prompt": user_msg}
+        )
+
+        if response.status_code == 200:
+            res = response.json()
+            answer = res.get("answer", "No answer received")
+            sources = res.get("sources", [])
+
+            with st.chat_message("assistant"):
+                st.markdown(answer)
+                if sources:
+                    st.caption(f"Sources: {sources}")
+
+            st.session_state.messages.append({
+                "role": "assistant",
+                "content": answer
+            })
+
+        else:
+            st.error(f"Error: {response.text}")
+
+    except Exception as e:
+        st.error(f"Backend connection failed: {e}")
+
+# --- CHATBOT UI ENDS HERE ---
 
 
 with tab2:
